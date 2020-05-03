@@ -34,6 +34,11 @@ public class ParcelController {
 	@Autowired
 	private ParcelServiceImpl service;
 	
+	@GetMapping ("/")
+	public String getDocumentation() {
+		
+		return "Welcome to sendit. Visit http://localhost:8080/api/v1/docs  for the api documentation";
+	}
 
 	@PutMapping("/parcels/{parcelId}/cancel")
 	@PreAuthorize("hasRole('USER')")
